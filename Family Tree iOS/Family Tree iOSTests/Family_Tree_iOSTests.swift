@@ -16,6 +16,14 @@ class Family_Tree_iOSTests: XCTestCase {
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
     
+    
+    func testDataDownload() {
+        NSRDataFetcher.shared.getRequestData { (data, response, err) in
+            XCTAssertNil(data != nil, "Data is nil")
+            XCTAssertNotNil(data != nil, "Not nil")
+        }
+    }
+    
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
