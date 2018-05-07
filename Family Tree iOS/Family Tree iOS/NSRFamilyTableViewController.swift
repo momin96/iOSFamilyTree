@@ -8,12 +8,23 @@
 
 import UIKit
 
+/**
+ TableViewController responsible for asking data from model layer & then displaying Family member's data in View layer.
+ 
+ Top right navigation item stack consist of two instance of UIBarButtonItem for sorting by name & age of family member
+ 
+ - Warning: This call cannot have custom User interface as it is derived from UITableViewController
+ */
 class NSRFamilyTableViewController: UITableViewController {
 
-
+    /// Storyboard's connection to UITableView
     @IBOutlet weak var familyTableView: UITableView!
     
+    /// Model object, Consist of family's data
     private var family: Family?
+    
+    // TableCell's unique identifier
+    private let cellId = "childCell"
     
     // MARK: View life Cycle
     deinit {
@@ -51,7 +62,7 @@ class NSRFamilyTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "childCell")!
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId)!
 
         if let children = family?.children {
             let child = children[indexPath.row]
@@ -70,6 +81,13 @@ class NSRFamilyTableViewController: UITableViewController {
         return family?.name
     }
     
+    // MARK: Target Action methods
+    
+    /**
+     Performs sorting of instance of Member by their names
+     
+     - Parameter sender: Instance of UIBarButtonItem which keeps state of order of sorting, eg: Ascending or Descending
+     */
     @IBAction func sortByName(_ sender : UIBarButtonItem) {
         let ascending : Bool = sender.toggleState == ToggleState.OFF ? false : true
         
@@ -82,6 +100,11 @@ class NSRFamilyTableViewController: UITableViewController {
         sender.invert()
     }
     
+    /**
+     Performs sorting of instance of Member by their ages
+     
+     - Parameter sender: Instance of UIBarButtonItem which keeps state of order of sorting, eg: Ascending or Descending
+     */
     @IBAction func sortByAge(_ sender: UIBarButtonItem) {
         
         let ascending : Bool = sender.toggleState == ToggleState.OFF ? false : true
