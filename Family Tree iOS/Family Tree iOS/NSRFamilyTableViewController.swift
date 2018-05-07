@@ -29,7 +29,6 @@ class NSRFamilyTableViewController: UITableViewController {
                 self.familyTableView.reloadData()
             })
         }
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -52,12 +51,17 @@ class NSRFamilyTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = UITableViewCell.init(style: .value1, reuseIdentifier: nil)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "childCell")!
 
         if let children = family?.children {
             let child = children[indexPath.row]
-            cell.textLabel?.text = "Name: "+(String(describing: child.name))
-            cell.detailTextLabel?.text = "Age: "+String.init(describing: child.age)
+            if let n = child.name {
+                cell.textLabel?.text = "Name: " + (String(describing: n))
+            }
+            else {
+                cell.textLabel?.text = "Name: "
+            }
+            cell.detailTextLabel?.text = "Age: " + String(describing: child.age)
         }
         return cell
     }
