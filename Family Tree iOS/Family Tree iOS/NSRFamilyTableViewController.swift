@@ -47,40 +47,6 @@ class NSRFamilyTableViewController: UITableViewController {
         print("didReceiveMemoryWarning in NSRFamilyTableViewController")
     }
     
-    
-    // MARK: TableView DataSource Methods
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let c = family?.children {
-            return c.count
-        }
-        return 0
-    }
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellId)!
-
-        if let children = family?.children {
-            let child = children[indexPath.row]
-            if let n = child.name {
-                cell.textLabel?.text = "Name: " + (String(describing: n))
-            }
-            else {
-                cell.textLabel?.text = "Name: "
-            }
-            cell.detailTextLabel?.text = "Age: " + String(describing: child.age)
-        }
-        return cell
-    }
-    
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return family?.name
-    }
-    
     // MARK: Target Action methods
     
     /**
@@ -117,4 +83,42 @@ class NSRFamilyTableViewController: UITableViewController {
         
         sender.invert()
     }
+}
+
+/// Extension to seperate User interface implementation with contoller's logic
+extension NSRFamilyTableViewController {
+    
+    // MARK: TableView DataSource Methods
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return family?.name
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if let c = family?.children {
+            return c.count
+        }
+        return 0
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId)!
+        
+        if let children = family?.children {
+            let child = children[indexPath.row]
+            if let n = child.name {
+                cell.textLabel?.text = "Name: " + (String(describing: n))
+            }
+            else {
+                cell.textLabel?.text = "Name: "
+            }
+            cell.detailTextLabel?.text = "Age: " + String(describing: child.age)
+        }
+        return cell
+    }
+    
 }
