@@ -8,11 +8,17 @@
 
 import Foundation
 
+/// A class reponsible for parsing & constructing data into model (Family) object
 class NSRDataConstructor: NSObject {
     
+    /**
+     Constructs Family data by initiating get request call to http API
+     
+     - Parameter onCompletion : Family model object
+     */
     class func constructFamilyData (_ onCompletion: @escaping (Family?) -> Void) {
         NSRDataFetcher.shared.getRequestData { (data, response, err) in
-            print(data)
+            
             guard let data = data else {
                 onCompletion(nil)
                 return
@@ -31,23 +37,15 @@ class NSRDataConstructor: NSObject {
                     let family = try decoder.decode(Family.self, from: data)
                     print(family as Any)
                     onCompletion(family)
-
-//                    if let n = family.name, let c = family.children {
-//                        let family = NSRFamily(name: n, children: c)
-//                        onCompletion(family)
-//                    }
-//                    else {
-//                        onCompletion(nil)
-//                    }
                 }
                 catch let err {
+                    /// Error while parsing
                     print("Error \(err)")
                     onCompletion(nil)
                 }
             }
         }
     }
-    
 }
 
 
