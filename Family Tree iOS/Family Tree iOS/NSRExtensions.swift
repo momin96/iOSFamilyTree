@@ -9,6 +9,11 @@
 import Foundation
 import UIKit
 
+// This swift file is going to keep most of commonly used extenstion on defined types
+
+/**
+ Extension on UIBarButtonItem to hold toggle state of button
+ */
 extension UIBarButtonItem: ToggleProtocol {
     
     func toggle() {
@@ -27,6 +32,7 @@ extension UIBarButtonItem: ToggleProtocol {
         }
     }
     
+    /// Performs invert operation on its intance's call
     func invert() {
         self.toggleState = toggleState == .ON ? .OFF : .ON
     }
