@@ -12,7 +12,7 @@ class NSRDataConstructor: NSObject {
     
     class func constructFamilyData (_ onCompletion: @escaping (Family?) -> Void) {
         NSRDataFetcher.shared.getRequestData { (data, response, err) in
-            print(data!)
+            print(data)
             guard let data = data else {
                 onCompletion(nil)
                 return
