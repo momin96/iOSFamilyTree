@@ -15,8 +15,9 @@ class NSRDataConstructor: NSObject {
      Constructs Family data by initiating get request call to http API
      
      - Parameter onCompletion : Family model object
+     - Parameter family : Model layer consist of family data that need to be displayed on UI
      */
-    class func constructFamilyData (_ onCompletion: @escaping (Family?) -> Void) {
+    class func constructFamilyData (_ onCompletion: @escaping (_ family: Family?) -> Void) {
         NSRDataFetcher.shared.getRequestData { (data, response, err) in
             
             guard let data = data else {
