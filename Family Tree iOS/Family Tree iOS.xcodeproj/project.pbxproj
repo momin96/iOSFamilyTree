@@ -16,6 +16,7 @@
 		0E792F5020A0187E00152C94 /* NSRDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E792F4D20A0187E00152C94 /* NSRDataFetcher.swift */; };
 		0E792F5120A0187E00152C94 /* NSRDataConstructor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E792F4E20A0187E00152C94 /* NSRDataConstructor.swift */; };
 		0E792F5320A01A2600152C94 /* NSRFamilyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E792F5220A01A2600152C94 /* NSRFamilyTableViewController.swift */; };
+		0E792F5520A02BE400152C94 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E792F5420A02BE400152C94 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		0E792F4D20A0187E00152C94 /* NSRDataFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSRDataFetcher.swift; sourceTree = "<group>"; };
 		0E792F4E20A0187E00152C94 /* NSRDataConstructor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSRDataConstructor.swift; sourceTree = "<group>"; };
 		0E792F5220A01A2600152C94 /* NSRFamilyTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSRFamilyTableViewController.swift; sourceTree = "<group>"; };
+		0E792F5420A02BE400152C94 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 				0E792F4E20A0187E00152C94 /* NSRDataConstructor.swift */,
 				0E792F4D20A0187E00152C94 /* NSRDataFetcher.swift */,
 				0E792F4C20A0187E00152C94 /* NSRFamily.swift */,
+				0E792F5420A02BE400152C94 /* Extensions.swift */,
 				0E792F3320A0183400152C94 /* Assets.xcassets */,
 				0E792F3520A0183400152C94 /* LaunchScreen.storyboard */,
 				0E792F3820A0183400152C94 /* Info.plist */,
@@ -210,6 +213,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0E792F4F20A0187E00152C94 /* NSRFamily.swift in Sources */,
+				0E792F5520A02BE400152C94 /* Extensions.swift in Sources */,
 				0E792F5120A0187E00152C94 /* NSRDataConstructor.swift in Sources */,
 				0E792F5020A0187E00152C94 /* NSRDataFetcher.swift in Sources */,
 				0E792F5320A01A2600152C94 /* NSRFamilyTableViewController.swift in Sources */,

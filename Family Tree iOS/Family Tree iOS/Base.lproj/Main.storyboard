@@ -52,8 +52,16 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="aDu-HG-xxS">
                         <rightBarButtonItems>
-                            <barButtonItem title="Sort Age" id="64h-NC-L24"/>
-                            <barButtonItem title="Sort Name" id="wjj-Yj-qBN"/>
+                            <barButtonItem title="Sort Age" id="64h-NC-L24">
+                                <connections>
+                                    <action selector="sortByAge:" destination="W6n-Ti-hkw" id="ERt-mi-cgI"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Sort Name" id="wjj-Yj-qBN">
+                                <connections>
+                                    <action selector="sortByName:" destination="W6n-Ti-hkw" id="OyC-Yj-FW7"/>
+                                </connections>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>

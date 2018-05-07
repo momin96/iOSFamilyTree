@@ -69,4 +69,29 @@ class NSRFamilyTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return family?.name
     }
- }
+    
+    @IBAction func sortByName(_ sender : UIBarButtonItem) {
+        let ascending : Bool = sender.toggleState == ToggleState.OFF ? false : true
+        
+        let sortedChildren = self.family?.sortFamilyMemberbyName(ascending: ascending)
+        
+        self.family?.updateChildren(sortedChildren)
+        
+        self.familyTableView.reloadData()
+        
+        sender.invert()
+    }
+    
+    @IBAction func sortByAge(_ sender: UIBarButtonItem) {
+        
+        let ascending : Bool = sender.toggleState == ToggleState.OFF ? false : true
+        
+        let sortedChildren = self.family?.sortFamilyMemberByAge(ascending: ascending)
+        
+        self.family?.updateChildren(sortedChildren)
+        
+        self.familyTableView.reloadData()
+        
+        sender.invert()
+    }
+}
