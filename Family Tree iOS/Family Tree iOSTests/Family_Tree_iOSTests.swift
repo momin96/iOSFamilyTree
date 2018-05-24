@@ -17,16 +17,22 @@ class Family_Tree_iOSTests: XCTestCase {
     }
     
     
-//    func testDataDownload() {
-//        NSRDataFetcher.shared.getRequestData { (data, response, err) in
-//
-//            let httpResponse = response as! HTTPURLResponse
-//            XCTAssertEqual(httpResponse.statusCode == 200, err == nil)
+    func testDataDownload() {
+        NSRDataFetcher.shared.getRequestData { (data, response, err) in
+
+   
+            
 //
 //            XCTAssertNil(data == nil, "Data is nil")
 //            XCTAssertNotNil(data != nil, "Not nil")
-//        }
-//    }
+        }
+        
+//        let httpResponse = response as! HTTPURLResponse
+//        print("httpResponse.statusCode \(httpResponse.statusCode)")
+//        XCTAssert(httpResponse.statusCode != 500, "failed")
+    }
+    
+    
     
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.

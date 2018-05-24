@@ -18,7 +18,11 @@ struct Associatekeys {
 
 /// An insance who confirms this protocol will implemented On & Off state
 protocol ToggleProtocol {
+    
+    associatedtype ToggleState12
     func toggle()
+    
+    func toggel2(state: ToggleState12, intv : Int)
 }
 
 /// enum to state On & Off state of an instance
